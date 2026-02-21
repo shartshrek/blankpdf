@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open PDF</title>
+</head>
+<body>
+
+<input type="file" id="pdfInput" accept="application/pdf">
+
+<script>
+document.getElementById("pdfInput").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const url = URL.createObjectURL(file);
+    window.location.href = url;
+});
+</script>
+
+</body>
+</html>
